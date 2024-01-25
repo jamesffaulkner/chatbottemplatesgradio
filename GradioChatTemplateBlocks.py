@@ -3,15 +3,18 @@ from dotenv import load_dotenv, find_dotenv
 import gradio as gr
 import os
 
-#Get secrets from .env file
+#This template draws heavily on the Gradio Chatbot Template with blocks[1]
+# [1] https://www.gradio.app/guides/creating-a-custom-chatbot-with-blocks
 
+
+#Get API key from .env file [1]; set model of ChatGPT to use; 3.5 used for price point [2]
+#[1] Other options for securely storing API key at https://platform.openai.com/docs/quickstart/step-2-setup-your-api-key
+#[2] https://openai.com/pricing
 load_dotenv(find_dotenv())
 api_key = os.environ["OPENAI_API_KEY"]
 model_id = "gpt-3.5-turbo"
 
-# System message to start conversations with model
-# Matches system message in fine-tuned training set
-
+# System message for model; explains the role of the chatbot assistant; a default included
 sys_message  = """
 You are a helpful assistant.
 """

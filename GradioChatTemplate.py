@@ -20,7 +20,6 @@ You are a helpful assistant.
 """
 
 # Gradio chat interface requires a function that takes in a message and history as args
-# I am unsure about my implementation, tbh -James
 def get_completions (message, history):
     
     #Add system message, retrieve previous chats from history, and add user message
@@ -44,4 +43,3 @@ def get_completions (message, history):
 
 # Launch chat interface; adjust placeholder text below as needed; add "share=True" as argument to launch() to get a shareable link
 gr.ChatInterface(fn=get_completions, chatbot=gr.Chatbot(label="Chat Window"), textbox=gr.Textbox(placeholder="Instructions for User Submissions"), title="Insert Clever Chatbot Title Here", description="Insert Description of Chatbot", examples=["Sample Input 1", "Sample Input 2"]).launch()
-
