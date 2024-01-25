@@ -1,1 +1,3 @@
 gradiotesting.py
+.venv/
+.env
